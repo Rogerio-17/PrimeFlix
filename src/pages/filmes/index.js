@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./index.css";
 
 import api from "../../services/api";
 
@@ -44,7 +45,7 @@ function Filme() {
   }
 
   return (
-    <div>
+    <div className="filme-info">
       <h1>{filme.title}</h1>
       <img
         src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`}
@@ -53,6 +54,15 @@ function Filme() {
 
       <h3>Sinopse</h3>
       <span>{filme.overview}</span>
+      <strong>Avaliação: {filme.vote_average.toFixed(1)} / 10</strong>
+
+      <div className="area-botao">
+        <button>Salvar</button>
+
+        <button>
+          <a href="#">Trailer</a>
+        </button>
+      </div>
     </div>
   );
 }

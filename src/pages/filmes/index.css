@@ -1,0 +1,63 @@
+.filme-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 0 8px;
+}
+
+.filme-info h1 {
+  margin: 14px 0;
+  text-align: center;
+}
+
+.filme-info img {
+  border-radius: 12px;
+  width: 600px;
+  max-width: 100%;
+}
+
+.filme-info h3 {
+  margin-top: 12px;
+}
+
+.filme-info span {
+  margin: 8px 0;
+}
+
+.filme-info strong {
+  margin-bottom: 20px;
+}
+
+.area-botao button {
+  margin-right: 10px;
+
+  background: rgb(31, 31, 31);
+  text-align: center;
+  border: none;
+
+  color: rgb(241, 9, 9);
+  font-size: 16px;
+  width: 282px;
+  margin-top: 4px;
+  padding: 8px;
+  border-radius: 14px;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.area-botao button:hover {
+  background: rgb(43, 42, 42);
+  color: #fff;
+}
+
+.area-botao button a {
+  color: rgb(241, 9, 9);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.area-botao button a:hover {
+  color: #fff;
+}
