@@ -11,7 +11,13 @@ function Favoritos() {
   }, []);
 
   function excluirFilme(id) {
-    alert("FILME EXCUIDO COM SUCESSO " + id);
+    let filtroFilme = filmes.filter((item) => {
+      return item.id !== id;
+    });
+
+    setFilmes(filtroFilme);
+
+    localStorage.setItem("@primeflix", JSON.stringify(filtroFilme));
   }
 
   return (
