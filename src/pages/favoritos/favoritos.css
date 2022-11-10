@@ -40,6 +40,11 @@ li {
   transition: 0.2s;
 }
 
+.botoes button:hover {
+  background: rgb(43, 42, 42);
+  transform: scale(1.05);
+}
+
 .botoes button a {
   color: rgb(241, 9, 9);
   text-decoration: none;
