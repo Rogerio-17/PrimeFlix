@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../../services/api";
-import "./index.css";
+import "./semelhantes.css";
 import { Link } from "react-router-dom";
 
 function Semelhantes() {
