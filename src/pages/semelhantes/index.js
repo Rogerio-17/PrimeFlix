@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import api from "../../services/api";
+import "./index.css";
 import { Link } from "react-router-dom";
-import "./home.css";
-///movie/now_playing?api_key=b570c746b0d07b381b44ff105cf96846&language=pt-BR
-function Home() {
+
+function Semelhantes() {
   const [filmes, setFilmes] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const { id } = useParams();
   useEffect(() => {
     async function loadFilmes() {
-      const response = await api.get("movie/now_playing", {
+      const response = await api.get(`movie/${id}/similar`, {
         params: {
           api_key: "b570c746b0d07b381b44ff105cf96846",
           language: "pt-br",
@@ -19,10 +20,8 @@ function Home() {
 
       //console.log(response.data.results.slice(0, 10));
 
-      setFilmes(response.data.results.slice(0, 10));
+      setFilmes(response.data.results.slice(0, 5));
       setLoading(false);
-
-      console.log(filmes);
     }
 
     loadFilmes();
@@ -48,9 +47,6 @@ function Home() {
                 alt={filme.title}
               ></img>
               <Link to={`/filme/${filme.id}`}>Ver detalhes</Link>
-              <Link to={`/semelhantes/${filme.id}`}>
-                Ver filmes semelhantes
-              </Link>
             </article>
           );
         })}
@@ -59,4 +55,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Semelhantes;
